@@ -6,10 +6,13 @@ import shutil
 
 
 class BrdcController:
-    def __init__(self, proxy_auth_token: str, urs_guid_ops: str):
+    def __init__(self, auth_cookies):
         self.session = requests.Session()
         self.session.cookies.update(
-            {"ProxyAuth": proxy_auth_token, "urs_guid_ops": urs_guid_ops}
+            {
+                "ProxyAuth": auth_cookies["proxyAuthToken"],
+                "urs_guid_ops": auth_cookies["ursGuidOps"],
+            }
         )
 
     def get_nasa_archive_link(self):

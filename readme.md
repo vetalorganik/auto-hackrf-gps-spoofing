@@ -2,6 +2,30 @@
 
 Simple application which fetches latest BRDC file form Nasa archive, generates binary file for gps spoofing and makes HackRF One execute this file
 
+## [CDDIS Nasa](https://cddis.nasa.gov)
+
+You will need an account which can reach protected BRDC files in archive. After registration and signing in into your account you have to save your auth token to auth.json.
+
+To achieve that you need to
+
+1. Open developer tools on the website
+2. Go to storage tab
+3. Go to cookies section
+4. Find ProxyAuth and urs_guid_ops cookies
+5. Copy values to auth.json file
+
+I'm not sure if urs_guid_ops cookie is required for authentication, so in some cases you can leave it blank in auth.json file
+
+Example:
+
+```
+{
+  "proxyAuthToken": "your_auth_token",
+  "ursGuidOps": ""
+}
+
+```
+
 ## Windows usage
 
 1. Install Python
